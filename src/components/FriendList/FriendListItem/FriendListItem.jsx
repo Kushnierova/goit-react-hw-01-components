@@ -1,16 +1,21 @@
 import PropTypes from 'prop-types';
+import { AiOutlineCheck } from 'react-icons/ai';
+import { AiOutlineClose } from 'react-icons/ai';
 import css from './FriendListItem.module.css';
 
 export const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
-    <li
-      className={css.item}
-      style={{
-        boxShadow: isOnline
-          ? '2px 2px 10px rgba(41, 225, 90)'
-          : '2px 2px 10px rgb(225, 41, 41)',
-      }}
-    >
+    <li className={css.item}>
+      {isOnline ? (
+        <span>
+          <AiOutlineCheck />
+        </span>
+      ) : (
+        <span>
+          <AiOutlineClose />
+        </span>
+      )}
+
       <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
       <p className={css.name}>{name}</p>
     </li>
@@ -18,7 +23,6 @@ export const FriendListItem = ({ avatar, name, isOnline }) => {
 };
 
 FriendListItem.propTypes = {
-  isOnline: PropTypes.bool.isRequired,
   avatar: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };

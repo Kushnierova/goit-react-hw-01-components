@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
-import { AiOutlineCheck } from 'react-icons/ai';
-import { AiOutlineClose } from 'react-icons/ai';
+import { FcApprove } from 'react-icons/fc';
+import { FcDisapprove } from 'react-icons/fc';
 import css from './FriendListItem.module.css';
 
 export const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
     <li className={css.item}>
       {isOnline ? (
-        <span>
-          <AiOutlineCheck />
+        <span className={css.status}>
+          <FcApprove />
         </span>
       ) : (
-        <span>
-          <AiOutlineClose />
+        <span className={css.status}>
+          <FcDisapprove />
         </span>
       )}
 

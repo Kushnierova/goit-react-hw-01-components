@@ -8,11 +8,11 @@ export const Statistics = ({ title, stats }) => {
       {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.list}>
-        {stats.map(stats => (
+        {stats.map(stat => (
           <StatisticsData
-            key={stats.id}
-            label={stats.label}
-            percentage={stats.percentage}
+            key={stat.id}
+            label={stat.label}
+            percentage={stat.percentage}
           />
         ))}
       </ul>
